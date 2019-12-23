@@ -22,9 +22,17 @@ MultipartRequest multipartRequest = new MultipartRequest(request, directory, max
 String fileName = multipartRequest.getOriginalFileName("file");
 String fileRealName = multipartRequest.getFilesystemName("file");
 
-new FileDAO().upload(fileName, fileRealName);
-out.write("파일명: " + fileName+ "<br>");
-out.write("실제파일명: " + fileRealName+ "<br>");
+if(!fileName.endsWith(".doc") && !fileName.endsWith(".hwp") && !fileName.endsWith(".pdf") && !fileName.endsWith(".xls")) {
+	File file = new File(directory + fileRealName);
+	file.delete();
+	out.write("업로드할 수 없는 확장자입니다.");
+} else {
+	new FileDAO().upload(fileName, fileRealName);
+	out.write("파일명: " + fileName+ "<br>");
+	out.write("실제파일명: " + fileRealName+ "<br>");
+}
+
+
 %>
 </body>
 </html>
