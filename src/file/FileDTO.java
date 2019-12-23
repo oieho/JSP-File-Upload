@@ -21,6 +21,6 @@ public FileDTO(String fileName, String fileRealName) {
 	this.fileRealName = fileRealName;
 }
 
-
+ 
 
 }
