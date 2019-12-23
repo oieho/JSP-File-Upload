@@ -46,6 +46,8 @@ if(mimeType == null) {
 		servletOutputStream.write(b, 0, data);
 	}
 	
+	new FileDAO().hit(fileName);
+	
 	servletOutputStream.flush();
 	servletOutputStream.close();
 	
