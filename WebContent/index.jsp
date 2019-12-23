@@ -3,13 +3,17 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta http-equiv="content-Type" content="text/html; charset="UTF-8">
+<meta http-equiv="content-Type" content="text/html; charset=UTF-8">
 <title>JSP 파일 업로드</title>
 </head>
 <body>
 <form action="upLoadAction.jsp" method="post" enctype="multipart/form-data">
-파일 : <input type="file" name="file"><br>
+파일 : <input type="file" name="file1"><br>
+파일 : <input type="file" name="file2"><br>
+파일 : <input type="file" name="file3"><br>
 <input type="submit" value="업로드"><br>
 </form>
+<br>
+<a href="fileDownLoad.jsp">파일 다운로드 페이지</a>
 </body>
 </html>
